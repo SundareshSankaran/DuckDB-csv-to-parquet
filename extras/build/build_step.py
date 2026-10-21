@@ -1,0 +1,28 @@
+import os
+from py_sas_studio_custom_steps import CustomStep 
+
+
+step_folder = "/create-export/create/homes/Sundaresh.Sankaran@sas.com/casuser/csv-to-parquet"
+
+extras_folder = "/create-export/create/homes/Sundaresh.Sankaran@sas.com/casuser/csv-to-parquet/extras"
+
+custom_step = CustomStep(name="DuckDB - CSV to Parquet")
+
+custom_step.attach_ui(os.path.join(extras_folder,f"{custom_step.name}.json"))
+
+prompt = """
+Create a SAS program which uses the SAS/Access to DuckDB interface and makes use of DuckDB's 
+capabilities to read a csv file and write to a specified parquet location.
+
+Use the custom step UI definition for more informaiton on parameters.
+"""
+
+custom_step.create_sas_program(prompt)
+
+custom_step.create_custom_step(os.path.join(step_folder,f"{custom_step.name}.step"))
+
+with open(os.path.join(extras_folder,f"{custom_step.name}.sas"),"w", encoding="utf-8") as f:
+    f.write(custom_step.extract_sas_program())
+
+with open(os.path.join(extras_folder,f"{custom_step.name}.json"),"w", encoding="utf-8") as f:
+    f.write(custom_step.extract_ui())
