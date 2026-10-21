@@ -6,9 +6,10 @@ This custom step utilizes SAS/ACCESS Interface to DuckDB to ingest a source CSV 
 ---
 ## User Interface
 
-(Watch out for a more detailed walkthrough soon.)
+Watch a quick demo [here](https://www.youtube.com/watch?v=5ZlCy239wfE): https://www.youtube.com/watch?v=5ZlCy239wfE
 
 ![Feast Your Eyes](./img/duckdb-csv-to-parquet-holding-screenshot_1.png)
+
 ---
 ## Requirements
 - SAS Viya environment with SAS Studio flows
