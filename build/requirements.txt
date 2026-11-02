@@ -1,0 +1,5 @@
+jupyter
+ipykernel
+py-sas-studio-custom-steps
+python-dotenv
+duckdb-assistant

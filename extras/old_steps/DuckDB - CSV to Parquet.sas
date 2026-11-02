@@ -18,6 +18,9 @@ Version: 0.1.0 (21OCT2026)
 %let has_headers = &has_headers.;                    /* TRUE or FALSE */
 %let parquet_output_path = &parquet_output_path.;    /* e.g., '/data/output/' */
 %let parquet_file_name = &parquet_file_name. ;       /* e.g., 'output_data WITHOUT the .parquet' */
+%let save_rejects = &save_rejects.;                  /* TRUE or FALSE */
+%let reject_data_table = &reject_data_table.;        /* e.g., REJECTS */
+%let reject_scan_table = &reject_scan_table.;        /* e.g., REJECT_SCANS */
 
 
 /* -----------------------------------------------------------------------------------------*
@@ -231,7 +234,7 @@ Version: 0.1.0 (21OCT2026)
                 */
                 COPY (
                     SELECT * FROM read_csv_auto("&file_path.", 
-                                                header=&has_headers, 
+                                                header=&has_headers::BOOLEAN, 
                                                 union_by_name=true)
                 ) TO "&parquet_file_path./&parquet_file_name..parquet" 
                 (FORMAT PARQUET, OVERWRITE TRUE);
