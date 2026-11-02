@@ -4,7 +4,7 @@
 
 “CSV to Parquet” is one of the most common conversion paths in modern data engineering pipelines.
 
-This custom step utilizes SAS/ACCESS Interface to DuckDB to ingest a source CSV file and convert it into an optimized Parquet file. 
+This custom step uses SAS/ACCESS Interface to DuckDB to ingest a source CSV file and convert it into an optimized Parquet file. 
 
 Open file formats such as [Parquet](https://parquet.apache.org) offer benefits of reduced data footprint and columnar structure. [DuckDB](https://duckdb.org) is a popular and performant query processing engine that efficiently handles data ingestion and format conversion.
 

@@ -1,7 +1,7 @@
 /************************************************************************
 DuckDB - CSV to Parquet Conversion
 
-Purpose: This SAS program utilizes SAS/ACCESS to DuckDB to ingest a CSV file 
+Purpose: This SAS program uses SAS/ACCESS to DuckDB to ingest a CSV file 
          and convert it into a Parquet file.
 Input Parameters:
 - csv_file_path: Full path to the source CSV file (macro variable)
